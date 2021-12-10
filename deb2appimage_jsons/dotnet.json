@@ -1,0 +1,50 @@
+{
+    "buildinfo": [
+    {
+        "prerun": [
+            "mkdir -p ~/.cache/deb2appimage/AppDir/usr/bin",
+            "mkdir dotnet && cd dotnet && tar xvf dotnet-sdk-6.0.100-preview.7.21379.14-linux-x64.tar.gz $(wget https://download.visualstudio.microsoft.com/download/pr/ce3fd989-b69d-439a-9cac-09ad40597db8/2848d49480b6e7b1b2a18cfa46d724e2/dotnet-sdk-6.0.100-preview.7.21379.14-linux-x64.tar.gz)",
+            "cp -r * ~/.cache/deb2appimage/AppDir/usr/bin"
+        ],
+        "name": "dotnet",
+        "version": "6.0",
+        "deps": null,
+        "repoarch": null,
+        "distrorepo": null,
+        "repoversion": null,
+        "binarypath": "/usr/bin/dotnet",
+        "desktoppath": null,
+        "iconpath": null,
+        "usewrapper": "false",
+        "postrun": [
+            null
+        ]
+    }
+    ],
+    "apprunconf": [
+    {
+        "setpath": "true",
+        "setlibpath": "false",
+        "setpythonpath": "false",
+        "setpythonhome": "false",
+        "setpythondontwritebytecode": "false",
+        "setxdgdatadirs": "false",
+        "setperllib": "false",
+        "setgsettingsschemadir": "false",
+        "setqtpluginpath": "false",
+        "exec": "/usr/bin/dotnet"
+    }
+    ],
+    "authors": [
+    {
+        "type": "Author",
+        "author": "Microsoft",
+        "url": "https://github.com/dotnet"
+    },
+    {
+        "type": "AppImage Maintainer",
+        "author": "antonl05",
+        "url": "https://github.com/antonl05"
+    }
+    ]
+}
