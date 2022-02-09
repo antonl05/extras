@@ -19,14 +19,11 @@ setCursorPos currX, currY
 stdout.write "•"
 cursorBackward()
 
-proc boole(): bool =
-  currX == 0 or currY == 0 or currX == x or currY == y
-
 while true:
   case getch():
     of 'W', 'w':
       block:
-       if boole(): break
+       if currY == 0: break
        stdout.write " "
        cursorUp()
        cursorBackward()
@@ -35,7 +32,7 @@ while true:
        dec currY
     of 'S', 's':
       block:
-       if boole(): break
+       if currY == y: break
        stdout.write " "
        cursorDown()
        cursorBackward()
@@ -44,7 +41,7 @@ while true:
        inc currY
     of 'a', 'A':
       block:
-       if boole(): break
+       if currX == 0: break
        stdout.write " "
        cursorBackward()
        cursorBackward()
@@ -53,7 +50,7 @@ while true:
        dec currX
     of 'd', 'D':
       block:
-       if boole(): break
+       if currX == x: break
        stdout.write " "
        stdout.write "•"
        cursorBackward()
