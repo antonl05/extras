@@ -51,8 +51,7 @@ while true:
     of 'd', 'D':
       block:
        if currX == x: break
-       stdout.write " "
-       stdout.write "•"
+       stdout.write " •"
        cursorBackward()
        inc currX
     of 'q', 'Q':
