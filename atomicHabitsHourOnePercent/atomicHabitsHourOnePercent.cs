@@ -26,14 +26,11 @@ public class AtomicHabitsHourOnePercent {
 		int endMins = ( hours * 60 ) + mins;
 		int[] result = ToHourMin(endMins);
 		float inc = endMins / 100;
+		float more = result[1] + inc;
 		Console.WriteLine("more of: " + inc + "mins");
 		Console.WriteLine(
-			"result: " +
-			  result[0] +
-			  "hours " +
-
-			  result[1] + inc +
-			  "mins"
+			"result: " + result[0] + "hours " +
+			more + "mins"
 		);
 	}
 }
