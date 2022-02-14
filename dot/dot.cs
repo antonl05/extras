@@ -23,47 +23,67 @@ public class Dot {
     Console.Write("•");
     Console.CursorLeft--;
 
-   try{while(true) {
-      switch(Convert.ToString(Console.ReadKey(true).KeyChar)) {
-      	case "W": case "w":
-      	  if (currY == 0) {Exit(currX, currY);}
-      	  Console.Write(" ");
-      	  Console.CursorTop--;
-      	  Console.CursorLeft--;
-       	  Console.Write("•");
-          Console.CursorLeft--;
-      	  currY--;
-      	  break;
-        case "S": case "s":
-          if (currY == Console.WindowHeight) {Exit(currX, currY);}
-          Console.Write(" ");
-          Console.CursorTop++;
-          Console.CursorLeft--;
-          Console.Write("•");
-          Console.CursorLeft--;
-          currX++;
-      	  break;
-      	case "A": case "a":
-      	  if(currX == 0) {Exit(currX, currY);}
-      	  Console.Write(" ");
-      	  Console.CursorLeft--;
-      	  Console.CursorLeft--;
-      	  Console.Write("•");
-      	  Console.CursorLeft--;
-      	  currY++;
-      	  break;
-      	case "D": case "d":
-      	  if (currX == Console.WindowWidth) {Exit(currX, currY);}
-      	  Console.Write(" •");
-      	  Console.CursorLeft--;
-      	  currX++;
-      	  break;
-      	case "Q": case "q":
-      	  Exit(currX, currY);
-      	  break;
-      	default:
-      	  break;
+    try{
+      while(true) {
+        switch(Convert.ToString(Console.ReadKey(true).KeyChar)) {
+      	  case "W": case "w":
+       	    if (currY == 0) {
+       	      Exit(currX, currY);
+       	    }
+      	    Console.Write(" ");
+      	    Console.CursorTop--;
+      	    Console.CursorLeft--;
+       	    Console.Write("•");
+            Console.CursorLeft--;
+      	    currY--;
+      	    break;
+
+          case "S": case "s":
+            if (currY == Console.WindowHeight) {
+              Exit(currX, currY);
+            }
+            Console.Write(" ");
+            Console.CursorTop++;
+            Console.CursorLeft--;
+            Console.Write("•");
+            Console.CursorLeft--;
+            currX++;
+      	    break;
+
+      	  case "A": case "a":
+      	    if(currX == 0) {
+      	      Exit(currX, currY);
+      	    }
+      	    Console.Write(" ");
+      	    Console.CursorLeft--;
+      	    Console.CursorLeft--;
+       	    Console.Write("•");
+      	    Console.CursorLeft--;
+      	    currY++;
+      	    break;
+
+      	  case "D": case "d":
+      	    if (currX == Console.WindowWidth) {
+      	      Exit(currX, currY);
+      	    }
+      	    Console.Write(" •");
+      	    Console.CursorLeft--;
+      	    currX++;
+      	    break;
+
+      	  case "Q": case "q":
+      	    Exit(currX, currY);
+      	    break;
+
+      	  default: break;
+        }
       }
-    }}catch(Exception) {Exit(currX, currY);}
+    }
+    catch(Exception ex) {
+      #if DEBUG
+        Console.WriteLine(ex.StackTrace);
+      #endif
+      Exit(currX, currY);
+    }
   }
 }
